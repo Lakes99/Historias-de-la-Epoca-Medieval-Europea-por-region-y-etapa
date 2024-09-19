@@ -16,7 +16,6 @@ personajes = [militares,gobernantes,religiosos]
 regiones = [norte,este,oeste,mediterraneo,centro]
 """
 
-# arreglar coso de aparición de epocas y siglos
 def categories(seleccion):
     categorias = ["epocas","siglos","personajes","regiones","leyendas"]
     if seleccion == 1:
