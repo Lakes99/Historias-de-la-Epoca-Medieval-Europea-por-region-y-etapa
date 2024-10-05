@@ -7,9 +7,7 @@ regiones = [norte,este,oeste,mediterraneo,centro]
 def anadir(a):
     if a != "0":
         print("se muestran los items que cumplan con la(s) categorías seleccionadas")
-    else:
-        a = True
-        return a
+    return a
 
 def primeraSeleccion(a):
     categorias = ["personajes","regiones","leyendas"]
@@ -50,21 +48,23 @@ def menuCategorias(): # menu incial (muestra todas las categorías)
 def main():
     # se abre ciclo while para repeticiones
     menuCategorias()
+    primeraSeleccion = True
+    while primeraSelección:
     opcion = int(input("Opcion: "))
-    # Primera selección
-    if opcion == 1: 
-        primeraSeleccion("épocas") #excluye epocas, incluye lo demás
-    elif opcion == 2:
-        primeraSeleccion(opcion) # excluye tiempos, incluye lo demás
-    elif opcion == 3:
-        primeraSeleccion("personajes") # excluye personajes
-    elif opcion == 4:
-        primeraSeleccion("regiones") #excluye regiones
-    
-    elif opcion == 5:
-        listaCategorias("leyendas") #exclue leyendas
-    elif opcion == 6:
-        print("Adios")
-    # demás selecciones:
+        # Primera selección
+        if opcion == 1: 
+            primeraSeleccion("épocas") #excluye epocas, incluye lo demás
+        elif opcion == 2:
+            primeraSeleccion(opcion) # excluye tiempos, incluye lo demás
+        elif opcion == 3:
+            primeraSeleccion("personajes") # excluye personajes
+        elif opcion == 4:
+            primeraSeleccion("regiones") #excluye regiones
+        
+        elif opcion == 5:
+            listaCategorias("leyendas") #exclue leyendas
+        elif opcion == 6:
+            print("Adios")
+        primeraSeleccion = False
 
 main()
