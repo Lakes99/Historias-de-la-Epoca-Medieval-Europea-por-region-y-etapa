@@ -4,6 +4,8 @@ Contexto:
 Este proyecto tiene como función ser una especie de base de datos para relatos sean ficticios o reales de la época medieval europea. El usuario, puede guardar las anecdotas que más le fascinen, para despues volver a abrirlas y leer lo que dicen. El usuario tiene como responsabilidad de escribir (tomar notas) de los sucesos. Cada una de ellas se va guardando como archivo de texto. El usuario las podrá clasificar por etápa de la época y por región del continente, que serán devueltas junto con el numbre del texto para especificar de que trata.
 
 Algoritmo general:
+El programa empieza con llamando la funcion main()
+
 1. Desde main() se presenta un menu (iniciar()) para escoger si se escribirá texto nuevo, si se abre la biblioteca (con archivos previamente escritos) o si se cierra el programa definitivamente, esta última opción hará que todo el programa se cierre el programa. Para Crear un archivo de texto se selecciona la primera opcion "1. Escribir nuevo archivo".
 
 2. En main() se llama a archivo() que crea una lista a ser llendada con variables. El usuario escribe el nombre que quiere que trate su texto, (el programa acepta mayúsculas y espacios, no acentos). Se puede escoger si es leyenda o no (agregandose como etiqueta).
@@ -52,8 +54,6 @@ def texto():
 8. El bucle acaba una vez que se escriba "xxx"
 9. La función regresa la lista creada (contiene todo el texto)
 
-def
-
 def crearArchivo(titulo):
 1. La función recibe el nombre (tituo) que se le asigna en la función -archivo()-
 2. variable 'nombreArchivo' es el título.txt en forma de texto
@@ -64,17 +64,34 @@ def crearArchivo(titulo):
 7. se cierra el archivo
 8. La función regresa el archivo -archivo-
 
-def archivos():
+def archivo():
 1. variable 'nombre' recibe el nombre para el relato que el usuario asigna
 2. variable 'veras' recibe entrada de usuario, le pregunta al usuario si es leyenda o no, escribe "L" si lo es, o da 'enter' si no lo es.
 3. Variable 'tituloJunto' que recibe el 'nombre' y quita los espacios ' ' los cambia a '' (sin espacio)
 4. Al texto de la variable 'tituloJunto' (ya sin espacios), a todas las mayúsculas se convierten en minúsculas. Será nombre propio para el nombre del archivo del relato
-5. 
+5. Se llama la función -crearArchivo(tituloJunto)- usando texto de variable de -tituloJunto-
+6. Se crea una lista vacia represantada por la variable 'partes'
+7. con variable 'epoca' llama y recibe lo de la función -tagEpoca()-
+8. con variable 'region' llama y recibe lo de la función -tagRegion()-
+9. Para el primer espacio, 0 de la lista, se le añade 'tituloJunto' (despues servirá para leer el archivo)
+10. Para el segundo espacio, 1 de la lista, se le añade 'nombre' (Para mostrar el título del relato después)
+11. Para el tercer espacio, 2 de la lista, se le añade 'epoca' (lo imprime después)
+12. Para el cuarto espacio, 3 de la lista, se le añade 'region'
+13. Recordando la variable 'veras' si era leyenda o no, 'veras' es "l", para el quinto espacio, 4 de la lista, se le añade el texto "Leyenda"
+14. la función regresa la lista creada en la variable 'partes'
 
 def iniciar():
   1. Imprime la primera opción de escribir un archivo
   2. Imprime la segunda opción de iniciar librería
   3. Imprime la tercera opción de salir
+
+def lectura(nombre):
+1. Definir la variable 'titulo' como el texto del nombre.txt (tituloJunto de antes)
+2. Variable 'archivo' abre el archivo usando variable 'titulo' en modo de lectura
+3. El programa empieza a leer desde el principio del archivo
+4. Variable 'contenido' lee el archivo entero (el texto escrito)
+5. Imprimir variable 'contenido'
+6. Se cierra el archivo
 
 def main():
 1. crea una lista vacia que servirá como librería, la identifica con la variable 'libreria'.
