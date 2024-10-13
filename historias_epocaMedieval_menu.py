@@ -55,7 +55,7 @@ def archivo(): # lista = [nombre de archivo,título,epoca,(leyenda)]
     veras = input('Presionar "L", si es leyenda, enter para saltar: ' )
     tituloJunto = nombre.replace(' ','')
     tituloJunto = tituloJunto.lower()
-    documento = crearArchivo(tituloJunto) #se crea el documento
+    crearArchivo(tituloJunto) #se crea el documento
     partes = []
     epoca = tagEpoca()
     region = tagRegion()
