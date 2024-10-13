@@ -101,7 +101,7 @@ def tagEpoca():
 3. se define una lista con variables 'alta' y 'baja'
 4. Se imprimen las opciones en forma de lista una por una con un bucle for 'i' en el rango de la lista
 5. variable 'opcion' definido con el número que escoja el usuario
-6. Al valor de 'variable' se le resta 1 or la naturaleza de los indices en las listas
+6. Al valor de 'variable' se le resta 1 por la naturaleza de los indices en las listas
 7. Una variable 'tag' será el item en la lista y la regresa
 
 def tagRegion():
@@ -135,7 +135,7 @@ def texto():
 
 def crearArchivo(titulo):
 
-1. La función recibe el nombre (tituo) que se le asigna en la función -archivo()-
+1. La función recibe el nombre (titulo) que se le asigna en la función -archivo()-
 2. variable 'nombreArchivo' es el título.txt en forma de texto
 3. Variable 'archivo' abre el archivo en modo escritura con el nombre en la variable 'nombreArchivo'
 4. Variable 'parrafos' se equivale a lo que devuelve la función -texto()- (la lista de texto)
