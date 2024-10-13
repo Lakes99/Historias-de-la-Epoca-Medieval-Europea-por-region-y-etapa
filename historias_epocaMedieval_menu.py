@@ -73,10 +73,6 @@ def iniciar():
     print('2. Iniciar libreria')
     print('3. Salir definitivamente')
 
-def libreria(): #Se llama en main() construye una biblioteca con todos los archivos que se escriben
-    lista = []
-    return lista
-
 def lectura(nombre):
     titulo = f'{nombre}.txt'
     archivo = open(f'{titulo}','r+')
@@ -86,23 +82,23 @@ def lectura(nombre):
     archivo.close()
 
 def main():
-    lista_libreria = libreria()  # Esta es una matriz (lista de listas)
+    libreria = []  # Esta es una matriz (lista de listas)
     continuar = True
     while continuar:
         iniciar()
         opcion = int(input('Opción: '))
         if opcion == 1:  # escribe
             historia = archivo()
-            lista_libreria.append(historia)
+            libreria.append(historia)
         elif opcion == 2:  # mostrar documentos
-            for i in range(len(lista_libreria)):
-                print(f'Texto: {lista_libreria[i][1]}')
-                for j in range(len(lista_libreria[i])):
+            for i in range(len(libreria)):
+                print(f'Texto: {libreria[i][1]}')
+                for j in range(len(libreria[i])):
                     if j > 1:
-                        print(lista_libreria[i][j])
+                        print(libreria[i][j])
                 decision = input('Abrir el documento en modo lectura? Presionar "s" para confirmar, enter para saltar: ')
                 if decision == 's':
-                    lectura(lista_libreria[i][0])
+                    lectura(libreria[i][0])
         elif opcion == 3:  # salir
             continuar = False
 
