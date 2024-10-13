@@ -71,7 +71,7 @@ def archivo(): # lista = [nombre de archivo,título,epoca,(leyenda)]
 def iniciar():
     print('1. Escribir nuevo archivo')
     print('2. Iniciar libreria')
-    print('3. Salir definitivamente')
+    print('3. Salir')
 
 def lectura(nombre):
     titulo = f'{nombre}.txt'
