@@ -35,14 +35,16 @@ def main():
 4. variable 'opcion' será el número que ponga el usuario basado en el "menu" de iniciar
   
 5. Si la opcion es 1, se va a escribir un archivo:\n
-5.1. Con la variable 'historia' se llama la función -archivo()- /línea//// que va a regresar una lista que guardan datos que se proporcionarán dentro de la función \n
-5.2. La variable 'historia' (lista) se va añadiendo a la matriz de 'libreria'
+6. Con la variable 'historia' se llama la función -archivo()- /línea//// que va a regresar una lista que guardan datos que se proporcionarán dentro de la función \n
+7. La variable 'historia' (lista) se va añadiendo a la matriz de 'libreria'
    
 8. Si se escoge la opción 2, se podrán leer los textos:
 9. Se abre un bucle for para 'i' en el rango de la matriz 'librería', pasando por cada "historia" guardada
 10. Se imprime "Texto: " con el nombre del texto (dato guardado en lista correspondiente dentro de la librería.
 11. Se abre otro bucle para 'j' en el rango de la lista detro de la librería (libreria[i]), para los items dentro de la lista correpondiente.
 12. Si 'j' es mayor a 1 se imprime cada uno de los items disponibles (libreria[i][j]), no se imprime 'j' = 0 porque es el nombre en mínusculas y sin espacios.
+13. Se abre una variable 'decision' que recibe "s" o 'enter' del usuario.
+14. Si 'decision' es s, se llama la función -lectura()- /línea/// con el item en libreria[i][0], que es el nombre corto (se va a usar para abrir el documento en modo de lectura)
 
 def iniciar():
   1. Imprime la primera opción de escribir un archivo
@@ -50,3 +52,5 @@ def iniciar():
   3. Imprime la tercera opción de salir
 
 def archivo():
+
+def lectura():
