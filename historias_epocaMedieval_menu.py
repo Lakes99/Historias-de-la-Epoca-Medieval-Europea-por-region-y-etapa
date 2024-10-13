@@ -97,6 +97,9 @@ def main():
         elif opcion == 2:  # mostrar documentos
             for i in range(len(lista_libreria)):
                 print(f'Texto: {lista_libreria[i][1]}')
+                for j in range(len(lista_libreria[i])):
+                    if j > 1:
+                        print(lista_libreria[i][j])
                 decision = input('Abrir el documento en modo lectura? Presionar "s" para confirmar, enter para saltar: ')
                 if decision == 's':
                     lectura(lista_libreria[i][0])
