@@ -35,14 +35,14 @@ def main():
 4. variable 'opcion' será el número que ponga el usuario basado en el "menu" de iniciar
   
 5. Si la opcion es 1, se va a escribir un archivo:
-a) Con la variable 'historia' se llama la función -archivo()- /línea//// que va a regresar una lista que guardan datos que se proporcionarán dentro de la función
-b) La variable 'historia' (lista) se va añadiendo a la matriz de 'libreria'
+6. Con la variable 'historia' se llama la función -archivo()- /línea//// que va a regresar una lista que guardan datos que se proporcionarán dentro de la función
+7. La variable 'historia' (lista) se va añadiendo a la matriz de 'libreria'
    
 7. Si se escoge la opción 2, se podrán leer los textos:
-6.1. Se abre un bucle for para 'i' en el rango de la matriz 'librería', pasando por cada "historia" guardada
-6.2. Se imprime "Texto: " con el nombre del texto (dato guardado en lista correspondiente dentro de la librería.
-6.3. Se abre otro bucle para 'j' en el rango de la lista detro de la librería (libreria[i]), para los items dentro de la lista correpondiente.
-6.3.1. Si 'j' es mayor a 1 se imprime cada uno de los items disponibles (libreria[i][j]), no se imprime 'j' = 0 porque es el nombre en mínusculas y sin espacios.
+8. Se abre un bucle for para 'i' en el rango de la matriz 'librería', pasando por cada "historia" guardada
+9. Se imprime "Texto: " con el nombre del texto (dato guardado en lista correspondiente dentro de la librería.
+10. Se abre otro bucle para 'j' en el rango de la lista detro de la librería (libreria[i]), para los items dentro de la lista correpondiente.
+11. Si 'j' es mayor a 1 se imprime cada uno de los items disponibles (libreria[i][j]), no se imprime 'j' = 0 porque es el nombre en mínusculas y sin espacios.
 
 def iniciar():
   1. Imprime la primera opción de escribir un archivo
