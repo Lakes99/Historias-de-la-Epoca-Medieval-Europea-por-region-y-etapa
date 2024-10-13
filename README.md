@@ -5,20 +5,48 @@ Este proyecto tiene como función ser una especie de base de datos para relatos 
 
 Algoritmo general:
 1. Desde main() se presenta un menu (iniciar()) para escoger si se escribirá texto nuevo, si se abre la biblioteca (con archivos previamente escritos) o si se cierra el programa definitivamente, esta última opción hará que todo el programa se cierre el programa. Para Crear un archivo de texto se selecciona la primera opcion "1. Escribir nuevo archivo".
+
 2. En main() se llama a archivo() que crea una lista a ser llendada con variables. El usuario escribe el nombre que quiere que trate su texto, (el programa acepta mayúsculas y espacios, no acentos). Se puede escoger si es leyenda o no (agregandose como etiqueta).
+
 3. Dentro de la misma función de archivo() se hace referencia a la función crearArchivo(titulo). se abre el archivo en modo escritura, usando el nombre que antes se dio anteriormente y el usuario puede escribir parrafos como el cuerpo del texto desde otra función texto() que la llama desde crearArchivo(). Devuelve a función archivo() lo que se creó.
+
 4. De nuevo en archivo(), se ejecutan las función tagEpoca() y tagRegion() para guardarse como variables. Ahí mismo se también se van añadiendo (en la lista que representa) las demás variables como nombre del archivo y texto, etiquetas.
+
 5. Recordando que archivo() devuelve una lista con los datos, esta se devuelve a main() de donde fue llamada como una variable "historia" la que se añadirá a otra lista que funciona como librería llamando a una función que la crea libreria(), creando así una matriz (lista de listas), para poder ser llamado después.
+
 6. El proceso de crear un archivo y guardar su información se repite cada vez que se escoge "1. Escribir nuevo archivo" como al principio. Se usa tantas veces que se quiera incluso después de escoger la segunda opción "2. Iniciar librería". Como la matriz de biblioteca está afuera de los ciclos, no se modifica la información ya guardada.
+
 7. Si se escogiera la segunda opción ya con textos guardados , el programa mostrara el titulo del archivo junto con sus etiquetas (época, región y/o leyenda), una "historia" a la vez imprime el nombre del texto, su época y región, usando un bucle for con la lista (matriz) de librería. El usuario decide saltarse el archivo para mostrar el siguiente en la lista o si abre ese mismo. Para eso indica "¿Abrir el documento en modo lectura? Presionar "s" para confirmar, enter para saltar:".
+
 8. Si el usuario presiona "s", se llama a la función de lectura(nombre) con el título en mínusculas y sin espacios que se había ocupado antes para abrir el archivo de texto en modo lectura.
+
 9. Después muestra el siguiente documento disponible, y el usuario vuelve a tomar la misma desición.
 10. Cuando no haya más archivos que mostrar, el usuario puede volver a escribir más y repetir el proceso.
 
 ---- Algoritmo por función ----
-def libreria():
-  1. Crea y devuelve una lista vacía
 
 def main():
-  1. Una variable (lista_libreria) trae la lista vacía de librería
+  1. crea una lista vacia que servirá como librería, la identifica con la variable 'libreria'.
+  
+  2. Mientras continuar sea cierto, toma el siguiente proeceso:
+  
+  3. Se muestran las opciones con la función -iniciar()- /línea ////
+  
+  4. variable 'opcion' será el número que ponga el usuario basado en el "menu" de iniciar
+  
+  5. Si la opcion es 1, se va a escribir un archivo:
+     5.1. Con la variable 'historia' se llama la función -archivo()- /línea//// que va a regresar una lista que guardan datos que se proporcionarán dentro de la función
+     5.2. La variable 'historia' (lista) se va añadiendo a la matriz de 'libreria'
+  6. Si se escoge la opción 2, se podrán leer los textos:
+     6.1. Se abre un bucle for para 'i' en el rango de la matriz 'librería', pasando por cada "historia" guardada
+     6.2. Se imprime "Texto: " con el nombre del texto (dato guardado en lista correspondiente dentro de la librería.
+     6.3. Se abre otro bucle para 'j' en el rango de la lista detro de la librería (libreria[i]), para los items dentro de la lista correpondiente.
+       6.3.1. Si 'j' es mayor a 1 se imprime cada uno de los items disponibles (libreria[i][j]), no se imprime 'j' = 0 porque es el nombre en mínusculas y sin espacios.
+
+def iniciar():
+  1. Imprime la primera opción de escribir un archivo
+  2. Imprime la segunda opción de iniciar librería
+  3. Imprime la tercera opción de salir
+
+def archivo():
 """
