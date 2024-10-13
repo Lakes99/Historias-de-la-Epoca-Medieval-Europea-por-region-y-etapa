@@ -3,8 +3,10 @@
 Contexto:
 Este proyecto tiene como función ser una especie de base de datos para relatos sean ficticios o reales de la época medieval europea. El usuario, puede guardar las anecdotas que más le fascinen, para despues volver a abrirlas y leer lo que dicen. El usuario tiene como responsabilidad de escribir (tomar notas) de los sucesos. Cada una de ellas se va guardando como archivo de texto. El usuario las podrá clasificar por etápa de la época y por región del continente, que serán devueltas junto con el numbre del texto para especificar de que trata.
 
+
 Algoritmo general:
-El programa empieza con llamando la funcion main()
+
+0. El programa empieza llamando a la funcion main()
 
 1. Desde main() se presenta un menu (iniciar()) para escoger si se escribirá texto nuevo, si se abre la biblioteca (con archivos previamente escritos) o si se cierra el programa definitivamente, esta última opción hará que todo el programa se cierre el programa. Para Crear un archivo de texto se selecciona la primera opcion "1. Escribir nuevo archivo".
 
@@ -24,6 +26,42 @@ El programa empieza con llamando la funcion main()
 
 9. Después muestra el siguiente documento disponible, y el usuario vuelve a tomar la misma desición.
 10. Cuando no haya más archivos que mostrar, el usuario puede volver a escribir más y repetir el proceso.
+
+
+Como usar:
+
+1. Correr el programa
+2. En el shell aparece un menú
+3. Para "Opcion: " teclear '1', dar enter
+4. Para 'Título, sin carácteres especiales, espacios y mayusculas permitidos: ', escribir "Juana de Arco" y dar enter
+5. Para 'Presionar "L", si es leyenda, enter para saltar: ', solo dar enter
+6. Aparecen instrucciones de como terminar
+7. En el shell escribir "(1412-1430) Campesina francesa, líder militar." y dar enter.
+8. Seguir escribiendo con "Participó en la guerra de los Cien Años." y dar enter.
+9. Escribir "El rey Carlos VII de Valois se coronó gracias a su apoyo", dar enter.
+10. Ahora escribir "xxx" y dar enter
+11. Aparecen opciones de época. Para 'Epoca (Escribir número): ', teclear '2' y dar enter
+12. Aparecen opciones para regiones. Para 'Región (Escribir número): ', teclear '3' y dar enter
+13. Vuelve a aparecer el menú del incio. Para 'Opción: ' teclear '1' y dar enter.
+14. Para 'Título, sin carácteres especiales, espacios y mayusculas permitidos: ', escribir "Carlo Magno" y dar enter
+15. Para 'Presionar "L", si es leyenda, enter para saltar: ', solo dar enter
+16. Aparecen instrucciones de como terminar
+17. En el shell escribir "(742 - 814). Rey de los francos y lombardos. Primer emperador del Sacro Imperio Romano.", dar enter
+18. Escribir "Unificó el imperio con guerras por varias partes del continente.", dar enter
+19. Escribir "El imperio fue base para varias de las futuras naciones europeas.", dar enter
+20. Escribir "xxx" y dar enter.
+21. Aparecen opciones de época. Para 'Epoca (Escribir número): ', teclear '1' y dar enter
+22. Aparecen opciones para regiones. Para 'Región (Escribir número): ', teclear '4' y dar enter
+23. Vuelve a aparecer el menu del incio. Para "Opción: ", teclear '2', dar enter
+24. Ahora se muestra "Texto: Juana de Arco", seguido por la época y región escogida
+25. Para "Abrir el documento en modo lectura? Presionar "s" para confirmar, enter para saltar: ", teclear "s"
+26. Muestra el texto del archivo para 'juanadearco.txt'
+27. Más abajo muestra lo que corresponde a "Texto: Carlo Magno", la época y la región seleccionada
+28. Para "Abrir el documento en modo lectura? Presionar "s" para confirmar, enter para saltar: ", teclear "s"
+29. Se imprime el texto correpondiente a 'carlomagno.txt'
+30. Se vuelve a mostrar el menu de inicio, para "Opción: " Escribir '3'.
+31. El programa finaliza
+
 
 ---- Algoritmo por función ----
 def tagEpoca():
