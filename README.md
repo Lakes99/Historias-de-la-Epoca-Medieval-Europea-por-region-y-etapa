@@ -1,5 +1,5 @@
 # Historias-de-la-Epoca-Medieval-Europea-por-region-y-etapa
-"""
+
 Contexto:
 Este proyecto tiene como función ser una especie de base de datos para relatos sean ficticios o reales de la época medieval europea. El usuario, puede guardar las anecdotas que más le fascinen, para despues volver a abrirlas y leer lo que dicen. El usuario tiene como responsabilidad de escribir (tomar notas) de los sucesos. Cada una de ellas se va guardando como archivo de texto. El usuario las podrá clasificar por etápa de la época y por región del continente, que serán devueltas junto con el numbre del texto para especificar de que trata.
 
@@ -26,22 +26,23 @@ Algoritmo general:
 ---- Algoritmo por función ----
 
 def main():
-  1. crea una lista vacia que servirá como librería, la identifica con la variable 'libreria'.
+1. crea una lista vacia que servirá como librería, la identifica con la variable 'libreria'.
   
-  2. Mientras continuar sea cierto, toma el siguiente proeceso:
+2. Mientras continuar sea cierto, toma el siguiente proeceso:
   
-  3. Se muestran las opciones con la función -iniciar()- /línea ////
+3. Se muestran las opciones con la función -iniciar()- /línea ////
   
-  4. variable 'opcion' será el número que ponga el usuario basado en el "menu" de iniciar
+4. variable 'opcion' será el número que ponga el usuario basado en el "menu" de iniciar
   
-  5. Si la opcion es 1, se va a escribir un archivo:
-     5.1. Con la variable 'historia' se llama la función -archivo()- /línea//// que va a regresar una lista que guardan datos que se proporcionarán dentro de la función
-     5.2. La variable 'historia' (lista) se va añadiendo a la matriz de 'libreria'
-  6. Si se escoge la opción 2, se podrán leer los textos:
-     6.1. Se abre un bucle for para 'i' en el rango de la matriz 'librería', pasando por cada "historia" guardada
-     6.2. Se imprime "Texto: " con el nombre del texto (dato guardado en lista correspondiente dentro de la librería.
-     6.3. Se abre otro bucle para 'j' en el rango de la lista detro de la librería (libreria[i]), para los items dentro de la lista correpondiente.
-       6.3.1. Si 'j' es mayor a 1 se imprime cada uno de los items disponibles (libreria[i][j]), no se imprime 'j' = 0 porque es el nombre en mínusculas y sin espacios.
+5. Si la opcion es 1, se va a escribir un archivo:
+  5.1. Con la variable 'historia' se llama la función -archivo()- /línea//// que va a regresar una lista que guardan datos que se proporcionarán dentro de la función
+  5.2. La variable 'historia' (lista) se va añadiendo a la matriz de 'libreria'
+   
+7. Si se escoge la opción 2, se podrán leer los textos:
+  6.1. Se abre un bucle for para 'i' en el rango de la matriz 'librería', pasando por cada "historia" guardada
+  6.2. Se imprime "Texto: " con el nombre del texto (dato guardado en lista correspondiente dentro de la librería.
+  6.3. Se abre otro bucle para 'j' en el rango de la lista detro de la librería (libreria[i]), para los items dentro de la lista correpondiente.
+  6.3.1. Si 'j' es mayor a 1 se imprime cada uno de los items disponibles (libreria[i][j]), no se imprime 'j' = 0 porque es el nombre en mínusculas y sin espacios.
 
 def iniciar():
   1. Imprime la primera opción de escribir un archivo
@@ -49,4 +50,3 @@ def iniciar():
   3. Imprime la tercera opción de salir
 
 def archivo():
-"""
