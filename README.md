@@ -31,39 +31,70 @@ Algoritmo general:
 Como usar:
 
 1. Correr el programa
+
 2. En el shell aparece un menú
+
 3. Para "Opcion: " teclear '1', dar enter
+
 4. Para 'Título, sin carácteres especiales, espacios y mayusculas permitidos: ', escribir "Juana de Arco" y dar enter
+
 5. Para 'Presionar "L", si es leyenda, enter para saltar: ', solo dar enter
+
 6. Aparecen instrucciones de como terminar
+
 7. En el shell escribir "(1412-1430) Campesina francesa, líder militar." y dar enter.
+
 8. Seguir escribiendo con "Participó en la guerra de los Cien Años." y dar enter.
+
 9. Escribir "El rey Carlos VII de Valois se coronó gracias a su apoyo", dar enter.
+
 10. Ahora escribir "xxx" y dar enter
+
 11. Aparecen opciones de época. Para 'Epoca (Escribir número): ', teclear '2' y dar enter
+
 12. Aparecen opciones para regiones. Para 'Región (Escribir número): ', teclear '3' y dar enter
+
 13. Vuelve a aparecer el menú del incio. Para 'Opción: ' teclear '1' y dar enter.
+
 14. Para 'Título, sin carácteres especiales, espacios y mayusculas permitidos: ', escribir "Carlo Magno" y dar enter
+
 15. Para 'Presionar "L", si es leyenda, enter para saltar: ', solo dar enter
+
 16. Aparecen instrucciones de como terminar
+
 17. En el shell escribir "(742 - 814). Rey de los francos y lombardos. Primer emperador del Sacro Imperio Romano.", dar enter
+
 18. Escribir "Unificó el imperio con guerras por varias partes del continente.", dar enter
+
 19. Escribir "El imperio fue base para varias de las futuras naciones europeas.", dar enter
+
 20. Escribir "xxx" y dar enter.
+
 21. Aparecen opciones de época. Para 'Epoca (Escribir número): ', teclear '1' y dar enter
+
 22. Aparecen opciones para regiones. Para 'Región (Escribir número): ', teclear '4' y dar enter
+
 23. Vuelve a aparecer el menu del incio. Para "Opción: ", teclear '2', dar enter
+
 24. Ahora se muestra "Texto: Juana de Arco", seguido por la época y región escogida
+
 25. Para "Abrir el documento en modo lectura? Presionar "s" para confirmar, enter para saltar: ", teclear "s"
+
 26. Muestra el texto del archivo para 'juanadearco.txt'
+
 27. Más abajo muestra lo que corresponde a "Texto: Carlo Magno", la época y la región seleccionada
+
 28. Para "Abrir el documento en modo lectura? Presionar "s" para confirmar, enter para saltar: ", teclear "s"
+
 29. Se imprime el texto correpondiente a 'carlomagno.txt'
+
 30. Se vuelve a mostrar el menu de inicio, para "Opción: " Escribir '3'.
+
 31. El programa finaliza
 
 
 ---- Algoritmo por función ----
+
 def tagEpoca():
 1. variable 'alta' definida con texto "Edad Media Alta (s.V - s.X)"
 2. variable 'baja' definido con texto "Edad Media Baja (s.XI - XV)"
@@ -82,17 +113,28 @@ def tagRegion():
 6. Se crea variable tag que es el item en la lista en posición del valor de la opcion.
 
 def texto():
+
 1. Se crea una lista vacia representada por variable 'lista'
+
 2. Se presenta variable 'escrita' con ningun valor
+
 3. Se imprimen instrucciones para terminar de escribir ("xxx")
+
 4. Se abre un bucle que corra lo siguiente mientras el escrito no sean las especificadas ("xxx")
+
 5. dentro del bucle, la variable 'escrito' va a ser lo que el usuario escriba antes de un 'enter' (parrafo)
+
 6. Variable 'texto' va a ser 'escrito' pero con un salto de parrafo para que no se imprima todo junto después.
+
 7. Variable 'texto' se añade a la lista creada del principio de la función.
+
 8. El bucle acaba una vez que se escriba "xxx"
+
 9. La función regresa la lista creada (contiene todo el texto)
 
+
 def crearArchivo(titulo):
+
 1. La función recibe el nombre (tituo) que se le asigna en la función -archivo()-
 2. variable 'nombreArchivo' es el título.txt en forma de texto
 3. Variable 'archivo' abre el archivo en modo escritura con el nombre en la variable 'nombreArchivo'
@@ -102,21 +144,37 @@ def crearArchivo(titulo):
 7. se cierra el archivo
 8. La función regresa el archivo -archivo-
 
+
 def archivo():
+
 1. variable 'nombre' recibe el nombre para el relato que el usuario asigna
+
 2. variable 'veras' recibe entrada de usuario, le pregunta al usuario si es leyenda o no, escribe "L" si lo es, o da 'enter' si no lo es.
+
 3. Variable 'tituloJunto' que recibe el 'nombre' y quita los espacios ' ' los cambia a '' (sin espacio)
+
 4. Al texto de la variable 'tituloJunto' (ya sin espacios), a todas las mayúsculas se convierten en minúsculas. Será nombre propio para el nombre del archivo del relato
+
 5. Se llama la función -crearArchivo(tituloJunto)- usando texto de variable de -tituloJunto-
+
 6. Se crea una lista vacia represantada por la variable 'partes'
+
 7. con variable 'epoca' llama y recibe lo de la función -tagEpoca()-
+
 8. con variable 'region' llama y recibe lo de la función -tagRegion()-
+
 9. Para el primer espacio, 0 de la lista, se le añade 'tituloJunto' (despues servirá para leer el archivo)
+
 10. Para el segundo espacio, 1 de la lista, se le añade 'nombre' (Para mostrar el título del relato después)
+
 11. Para el tercer espacio, 2 de la lista, se le añade 'epoca' (lo imprime después)
+
 12. Para el cuarto espacio, 3 de la lista, se le añade 'region'
+
 13. Recordando la variable 'veras' si era leyenda o no, 'veras' es "l", para el quinto espacio, 4 de la lista, se le añade el texto "Leyenda"
+
 14. la función regresa la lista creada en la variable 'partes'
+
 
 def iniciar():
   1. Imprime la primera opción de escribir un archivo
