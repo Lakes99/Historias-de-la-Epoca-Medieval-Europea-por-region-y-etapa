@@ -52,6 +52,8 @@ def texto():
 8. El bucle acaba una vez que se escriba "xxx"
 9. La función regresa la lista creada (contiene todo el texto)
 
+def
+
 def crearArchivo(titulo):
 1. La función recibe el nombre (tituo) que se le asigna en la función -archivo()-
 2. variable 'nombreArchivo' es el título.txt en forma de texto
@@ -62,7 +64,12 @@ def crearArchivo(titulo):
 7. se cierra el archivo
 8. La función regresa el archivo -archivo-
 
-
+def archivos():
+1. variable 'nombre' recibe el nombre para el relato que el usuario asigna
+2. variable 'veras' recibe entrada de usuario, le pregunta al usuario si es leyenda o no, escribe "L" si lo es, o da 'enter' si no lo es.
+3. Variable 'tituloJunto' que recibe el 'nombre' y quita los espacios ' ' los cambia a '' (sin espacio)
+4. Al texto de la variable 'tituloJunto' (ya sin espacios), a todas las mayúsculas se convierten en minúsculas. Será nombre propio para el nombre del archivo del relato
+5. 
 
 def iniciar():
   1. Imprime la primera opción de escribir un archivo
