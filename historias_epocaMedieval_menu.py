@@ -1,70 +1,106 @@
-"""
-siglos = [[I,II,III,IV,V,VI,VII,VIII,IX,X][XI,XII,XIII,XIV,XV,]]
-epocas = [alta,baja]
-personajes = [militares,gobernantes,religiosos]
-regiones = [norte,este,oeste,mediterraneo,centro]
-"""
-def anadir(a):
-    if a != "0":
-        print("se muestran los items que cumplan con la(s) categorías seleccionadas")
-    return a
+def tagEpoca():
+    print()
+    print('--- Épocas ---')
+    alta = 'Edad Media Alta (s.V - s.X)'
+    baja = 'Edad Media Baja (s.XI - XV)'
+    lista = [alta,baja]
+    print('Opciones:')
+    for i in range(len(lista)):
+        print(f'{i+1}.',lista[i])
+    opcion = int(input('Epoca (Escribir número): '))
+    opcion -= 1
+    tag = lista[opcion]
+    return tag
 
-def primeraSeleccion(a):
-    categorias = ["personajes","regiones","leyendas"]
-    # Época seleccionado:
-    if a == "épocas":
-        categorias.insert(0,"siglos")
-    #Siglo seleccionado es la lista default, no se añade ni quita
-    # Personajes seleccionado:
-    if a == "personajes":
-        del categorias[0]
-        categorias.insert(0,"épocas")
-        categorias.insert(1,"siglos")
-    # Regiones seleccionado:
-    elif a == "regiones":
-        del categorias[1]
-        categorias.insert(0,"épocas")
-        categorias.insert(1,"siglos")
-    # Leyendas seleccionado:
-    elif a == "leyendas":
-        categorias.insert(0,"épocas")
-        categorias.insert(1,"siglos")
-        del categorias[-1]
-        
-    otraCategoria = input("Añadir otra categoría? (Presionar 0 para añadir otra, cualquier otra tecla para no): ")
-    anadir(otraCategoria)
-    for i in range(len(categorias)):
-        print(str(i +1) + ". " + categorias[i])
-    
+def tagRegion():
+    print()
+    print('--- Regiones ---')
+    norte = 'Region Norte'
+    britanica = 'Islas Británica'
+    occidente = 'Region Occidente'
+    centro ='RegionCentro'
+    oriente = 'Region Oriente'
+    sureste = 'Region Sureste'
+    sur ='Region Sur'
+    lista = [norte,britanica,occidente,centro,oriente,sureste,sur]
+    for i in range(len(lista)):
+        print(f'{i+1}.',lista[i])
+    opcion = int(input('Región (Escribir número): '))
+    print()
+    opcion -= 1
+    tag = lista[opcion]
+    return tag
 
-def menuCategorias(): # menu incial (muestra todas las categorías)
-    print("1. Épocas")
-    print("2. Siglos")
-    print("3. Tipos de personajes")
-    print("4. Regiones")
-    print("5. Leyendas")
-    print("6. Salir")
+def texto():
+    lista = [] #se guardan todos los parrafos
+    escrito = None
+    print('Para terminar de escribir, teclee "xxx"')
+    while escrito != 'xxx':
+        escrito = input()
+        texto = f'{escrito}\n'
+        lista.append(texto)
+    return lista
+
+def crearArchivo(titulo):# Crea un archivo
+    nombreArchivo = f'{titulo}.txt'
+    archivo = open(nombreArchivo, 'w+')
+    parrafos = texto() #esto es una lista
+    archivo.writelines(parrafos)
+    archivo.seek(0)
+    archivo.close()
+    return archivo
+
+def archivo(): # lista = [nombre de archivo,título,epoca,(leyenda)]
+    nombre = input('Título, sin carácteres especiales, espacios y mayusculas permitidos: ')
+    veras = input('Presionar "L", si es leyenda, enter para saltar: ' )
+    tituloJunto = nombre.replace(' ','')
+    tituloJunto = tituloJunto.lower()
+    documento = crearArchivo(tituloJunto) #se crea el documento
+    partes = []
+    epoca = tagEpoca()
+    region = tagRegion()
+    #se añaden a la lista en ese orden:
+    partes.append(tituloJunto)
+    partes.append(nombre)
+    partes.append(epoca)
+    partes.append(region)
+    if veras == 'l':
+        partes.append('Leyenda')
+    return partes
+
+def iniciar():
+    print('1. Escribir nuevo archivo')
+    print('2. Iniciar libreria')
+    print('3. Salir definitivamente')
+
+def libreria(): #Se llama en main() construye una biblioteca con todos los archivos que se escriben
+    lista = []
+    return lista
+
+def lectura(nombre):
+    titulo = f'{nombre}.txt'
+    archivo = open(f'{titulo}','r+')
+    archivo.seek(0)
+    contenido = archivo.read()
+    print(contenido)
+    archivo.close()
 
 def main():
-    # se abre ciclo while para repeticiones
-    menuCategorias()
-    primeraSeleccion = True
-    while primeraSelección:
-    opcion = int(input("Opcion: "))
-        # Primera selección
-        if opcion == 1: 
-            primeraSeleccion("épocas") #excluye epocas, incluye lo demás
-        elif opcion == 2:
-            primeraSeleccion(opcion) # excluye tiempos, incluye lo demás
-        elif opcion == 3:
-            primeraSeleccion("personajes") # excluye personajes
-        elif opcion == 4:
-            primeraSeleccion("regiones") #excluye regiones
-        
-        elif opcion == 5:
-            listaCategorias("leyendas") #exclue leyendas
-        elif opcion == 6:
-            print("Adios")
-        primeraSeleccion = False
+    lista_libreria = libreria()  # Esta es una matriz (lista de listas)
+    continuar = True
+    while continuar:
+        iniciar()
+        opcion = int(input('Opción: '))
+        if opcion == 1:  # escribe
+            historia = archivo()
+            lista_libreria.append(historia)
+        elif opcion == 2:  # mostrar documentos
+            for i in range(len(lista_libreria)):
+                print(f'Texto: {lista_libreria[i][1]}')
+                decision = input('Abrir el documento en modo lectura? Presionar "s" para confirmar, enter para saltar: ')
+                if decision == 's':
+                    lectura(lista_libreria[i][0])
+        elif opcion == 3:  # salir
+            continuar = False
 
 main()
