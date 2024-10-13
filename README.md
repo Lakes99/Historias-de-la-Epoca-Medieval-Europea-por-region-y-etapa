@@ -1,11 +1,4 @@
 # Historias-de-la-Epoca-Medieval-Europea-por-region-y-etapa
 """
-Este proyecto tiene como propósito dar a conocer mitos, leyendas e historias verdaderas de la época medieval en Europa seleccionando por tópicos, año y regiones. Se enfoca en dar opciones de selección implementando ciertos modelos mixtos. Tiene un enfoque meramente de entretenimiento para los fanáticos de la historia, especialmente de la época medieval.
-
-Cada artículo será categorizado. EL usuario podrá seleccionar de una a varias categorías y el programa presentará los artículos que cumplen con las categorías seleccionadas. Las categorías que se pueden seleccionar son:
-  - Ficción / no ficción
-  - Tipos de personajes
-  - Regiones
-  - Siglos
-  - Etápas
+Este proyecto tiene como función ser una especie de base de datos para relatos sean ficticios o reales de la época medieval europea. El usuario, puede guardar las anecdotas que más le fascinen, para despues volver a abrirlas y leer lo que dicen. El usuario tiene como responsabilidad de escribir (tomar notas) de los sucesos. Cada una de ellas se va guardando como archivo de texto. El usuario las podrá clasificar por etápa de la época y por región del continente.
 """
