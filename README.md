@@ -35,8 +35,8 @@ def main():
 4. variable 'opcion' será el número que ponga el usuario basado en el "menu" de iniciar
   
 5. Si la opcion es 1, se va a escribir un archivo:
-5.1. Con la variable 'historia' se llama la función -archivo()- /línea//// que va a regresar una lista que guardan datos que se proporcionarán dentro de la función
-5.2. La variable 'historia' (lista) se va añadiendo a la matriz de 'libreria'
+a) Con la variable 'historia' se llama la función -archivo()- /línea//// que va a regresar una lista que guardan datos que se proporcionarán dentro de la función
+b) La variable 'historia' (lista) se va añadiendo a la matriz de 'libreria'
    
 7. Si se escoge la opción 2, se podrán leer los textos:
 6.1. Se abre un bucle for para 'i' en el rango de la matriz 'librería', pasando por cada "historia" guardada
